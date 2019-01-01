@@ -1,32 +1,29 @@
 <template lang="pug">
-  .page
-    .c(v-show="select=='1'")
-      h1(v-for="i in 'sdadqwdasddsfwfqdsadqdsad'") {{i}}
-    .c(v-show="select=='2'")
-      h1(v-for="i in 20") {{i}}
+  .main-page
+    router-view
     mt-tabbar(v-model="select")
-      mt-tab-item(id="1")
+      mt-tab-item(id="/order")
         i.icon.iconfont.icon-createtask(slot="icon")
         | 订单
-      mt-tab-item(id="2")
-        i.icon.iconfont.icon-clock(slot="icon")
-        | 进行中
-      mt-tab-item(id="3")
+      mt-tab-item(id="/setting")
+        i.icon.iconfont.icon-setup(slot="icon")
+        | 设置
+      mt-tab-item(id="/user")
         i.icon.iconfont.icon-addressbook(slot="icon")
-        | 我的
+        | 用户
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'app',
-  components: {
-    HelloWorld
-  },
   data() {
     return {
-      select: '1'
+      select: this.$router.currentRoute.path
+    }
+  },
+  watch: {
+    select(val) {
+      this.$router.push(val)
     }
   },
   methods: {}
@@ -37,8 +34,11 @@ export default {
 i.icon.iconfont {
   font-size: 26px;
 }
-.c {
-  height: 70vh;
-  overflow: auto;
-}
+/* .main-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+} */
 </style>

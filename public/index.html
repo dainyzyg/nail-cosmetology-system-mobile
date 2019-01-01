@@ -8,14 +8,56 @@
   <link rel="shortcut icon" href="<%= webpackConfig.output.publicPath %>favicon.ico">
   <link rel="stylesheet" type="text/css" href="iconfont.css">
   <title>nail-cosmetology-system-mobile</title>
+  <style>
+    /* * {
+      font-family: "PingFang SC", "Microsoft YaHei" !important;
+    } */
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    }
+
+    .page {
+      display: flex;
+      flex: 1;
+      align-items: stretch;
+      overflow: auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 55px;
+      /* background: saddlebrown; */
+    }
+
+    .page.col {
+      flex-direction: column;
+    }
+
+    .flex {
+      display: flex;
+      align-items: stretch;
+    }
+
+    .flex-c {
+      display: flex;
+      align-items: stretch;
+      flex-direction: column;
+    }
+  </style>
 </head>
 
 <body>
   <noscript>
     <strong>We're sorry but nail-cosmetology-system-mobile doesn't work properly without JavaScript enabled. Please enable it to
-      continue.</strong>
+      continue.
+    </strong>
   </noscript>
   <div id="app"></div>
+  <script src="socket.io.js"></script>
   <!-- built files will be auto injected -->
 </body>
 
